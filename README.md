@@ -1,15 +1,17 @@
 About archspec
 ==============
 
-Home: https://github.com/archspec/archspec
+Home: https://pypi.org/project/archspec/
 
 Package license: MIT OR Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/archspec-feedstock/blob/master/LICENSE.txt)
 
 Summary: A library to query system architecture
 
+Development: https://github.com/archspec/archspec/
 
+Documentation: https://archspec.readthedocs.io/
 
 Current build status
 ====================
@@ -116,5 +118,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@anthchirp](https://github.com/anthchirp/)
 * [@isuruf](https://github.com/isuruf/)
 
