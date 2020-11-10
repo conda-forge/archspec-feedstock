@@ -6,36 +6,47 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/archspec-{{ version }}.tar.gz
   sha256: 34bafad493b41208857232e21776216d716de37ab051a6a4a1cc1653f7e26423
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - archspec = archspec.cli:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.5
     - poetry
   run:
-    - python
+    - click >=7.1.2,<8.0
+    - python >=3.5
+    - six >=1.13.0,<2.0.0
 
 test:
   imports:
     - archspec
+    - archspec.cpu
+  commands:
+    - pip check
+    - archspec --help
+  requires:
+    - pip
 
 about:
-  home: https://github.com/archspec/archspec
+  home: https://pypi.org/project/archspec/
+  summary: A library to query system architecture
   license: MIT OR Apache-2.0
   license_file:
     - LICENSE-MIT
     - LICENSE-APACHE
-  summary: 'A library to query system architecture'
+  dev_url: https://github.com/archspec/archspec/
+  doc_url: https://archspec.readthedocs.io/
 
 extra:
   recipe-maintainers:
+    - anthchirp
     - isuruf
