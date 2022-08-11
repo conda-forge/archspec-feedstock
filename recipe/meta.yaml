@@ -14,7 +14,7 @@ build:
   noarch: python
   entry_points:
     - archspec = archspec.cli:main
-  script: {{ PYTHON }} -m pip install . -vv --use-deprecated=out-of-tree-build
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
