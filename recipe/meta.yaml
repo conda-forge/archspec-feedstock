@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/archspec-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/archspec-{{ version }}.tar.gz
   sha256: d07deb5b6e2ab3b74861e217523d02e69be8522f6e6565f4cc5d2062eb1a5d2c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - archspec = archspec.cli:main
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - poetry
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -33,6 +33,7 @@ test:
     - archspec --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/archspec/
