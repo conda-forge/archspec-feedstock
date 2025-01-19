@@ -7,7 +7,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/archspec-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/archspec-${{ version }}.tar.gz
   sha256: d07deb5b6e2ab3b74861e217523d02e69be8522f6e6565f4cc5d2062eb1a5d2c
 
 build:
@@ -21,17 +21,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python ${{ python_min }}.*
     - poetry
   run:
-    - python >=3.6
+    - python >=${{ python_min }}
 
 tests:
   - python:
       imports:
         - archspec
         - archspec.cpu
-      pip_check: true
       python_version: ${{ python_min }}.*
   - requirements:
       run:
