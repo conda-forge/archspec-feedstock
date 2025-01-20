@@ -150,6 +150,3 @@ Feedstock Maintainers
 * [@anthchirp](https://github.com/anthchirp/)
 * [@isuruf](https://github.com/isuruf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
