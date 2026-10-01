@@ -1,5 +1,5 @@
 {% set name = "archspec" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/archspec-{{ version }}.tar.gz
-  sha256: 5bec8dfc5366ff299071200466dc9572d56db4e43abca3c66bdd62bc2b731a2a
+  sha256: 2ea980955530499865225eff917b649b39fd014b53f8c6461b6348c1d8b866f1
 
 build:
   number: 0
